@@ -7,5 +7,7 @@ public class HibernateMain
 		System.out.println("Hello World");
 		
 		System.out.println("Test 2");
+		
+		//Test 3
 	}
 }
