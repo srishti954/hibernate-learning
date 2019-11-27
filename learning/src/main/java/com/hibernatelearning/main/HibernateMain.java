@@ -1,27 +1,31 @@
 package com.hibernatelearning.main;
 
+import java.util.Date;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+import com.hibernatelearning.main.model.Employee;
+
 public class HibernateMain 
 {
-	public static void main(String... s)
+	public static void main(String... args)
 	{
-		System.out.println("Hello World");
-		// Hi World
-                // Hi Again
-		// Third Change
-
-		System.out.println("Hello World");		
-		System.out.println("Test 2");
+		Date date=new Date();
+		Employee employeeObj1 = new Employee(1, "Raghav", "Software Engineer", 101, 231,"A",date,date);
+		Configuration config=new Configuration();
+		config.configure("hibernate.cfg.xml");
 		
-		// Test 3
- 	        // Hi World
-        	// Hi Again
-
-		System.out.println("Hii");
-
-		//Checking the GIT commit
-
+		SessionFactory factoryObj=config.buildSessionFactory();
+		Session session=factoryObj.openSession();
 		
-		// Test 4
-
+		Transaction txn=session.beginTransaction();
+		session.save(employeeObj1);
+		txn.commit();
+		session.close();
+		
+		
 	}
 }
