@@ -6,8 +6,10 @@
 		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
 		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/employeefeedback</property>
 		<property name="hibernate.connection.username">root</property>
-		<property name="hibernate.connection.password">P@ssw0rd</property>
+		<property name="hibernate.connection.password">root</property>
 		
+        <property name="hibernate.current_session_context_class">thread</property>
+
 		<mapping class="com.hibernatelearning.main.model.Employee"></mapping>
 	</session-factory>
 </hibernate-configuration>
