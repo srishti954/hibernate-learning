@@ -38,7 +38,7 @@ public class HibernateMain
 			if(s.equals("saveemployee"))
 			{
 				Date date=new Date();
-				Employee employeeObj1 = new Employee(1, "Raghav", "Software Engineer", 101, 231,"A",date,date);
+				Employee employeeObj1 = new Employee(1, "Raghav", "Software Engineer", 1, 1,"A",date,date);
 				
 				employeeDao.saveEmployee(employeeObj1);
 			}
