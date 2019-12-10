@@ -6,7 +6,7 @@ public class HibernateMain
 	{
 		System.out.println("Hello World");
 		// Hi World
-                // Hi Again
+        // Hi Again
 		// Third Change
 
 		System.out.println("Hello World");		
@@ -19,8 +19,6 @@ public class HibernateMain
 		System.out.println("Hii");
 
 		//Checking the GIT commit
-
-		
 		// Test 4
 
 	}
