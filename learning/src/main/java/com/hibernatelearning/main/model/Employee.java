@@ -14,7 +14,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name= "Employee")
-public class Employee {
+public class Employee extends BaseEntity{
   
 		@Id
 		@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -32,30 +32,19 @@ public class Employee {
 		
 		@Column(name="ADDRESS_ID")
 		private Integer adrs_id;
-		
-		@Column(name="STATUS")
-		private String status;
-		
-		@Column(name="CREATED_DATE")
-		private Date created_date;
-		
-		@Column(name="MODIFIED_DATE")
-		private Date modified_date;
-		
+
 		public Employee()
 		{
 			
 		}
 		public Employee(Integer id,String name,String designation,Integer org_id, Integer adrs_id,String status, Date created_date, Date modified_date)
 		{
+			super(status,created_date,modified_date);
 			this.id=id;
 			this.name=name;
 			this.designation=designation;
 			this.org_id=org_id;
 			this.adrs_id=adrs_id;
-			this.status=status;
-			this.created_date=created_date;
-			this.modified_date=modified_date;
 		}
 		public Integer getId() {
 			return id;
@@ -87,24 +76,5 @@ public class Employee {
 		public void setAdrs_id(Integer adrs_id) {
 			this.adrs_id = adrs_id;
 		}
-		public String getStatus() {
-			return status;
-		}
-		public void setStatus(String status) {
-			this.status = status;
-		}
-		public Date getCreated_date() {
-			return created_date;
-		}
-		public void setCreated_date(Date created_date) {
-			this.created_date = created_date;
-		}
-		public Date getModified_date() {
-			return modified_date;
-		}
-		public void setModified_date(Date modified_date) {
-			this.modified_date = modified_date;
-		}
-	
 
 }
